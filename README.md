@@ -52,4 +52,4 @@ The Topaz Reverse Shell is a basic remote shell program for Windows written in p
 
 If Python 2.7 is not installed on client computer use pyinstaller version 3.6 to convert client.py to an exe file. 
 
-![Converting client.py to exe file](/pictures/screenshot.png)
+![Converting client.py to exe file](/pictures/screenshot0.png)
