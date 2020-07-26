@@ -77,7 +77,7 @@ list_of_commands = "---------------------------------------- List of commands --
                    "\nbrowser_password ------- gets saved passwords from google chrome" \
                    "\nrouter_password --------- gets password of all known routers to computer" \
                    "\nwebcam ----------------- captures image from webcam" \
-                   "\nlisten ----------------- listens on mic of client computer for set period of tiem (seconds)" \
+                   "\nlisten ----------------- listens on mic of client computer for set period of time (seconds)" \
                    "\nremove ----------------- removes file at given path from client computer" \
                    "\nshutdown --------------- remote shutdown of client computer" \
                    "\nexit ------------------- exits program"
