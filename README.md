@@ -53,3 +53,7 @@ The Topaz Reverse Shell is a basic remote shell program for Windows written in p
 If Python 2.7 is not installed on client computer use pyinstaller version 3.6 to convert client.py to an exe file. 
 
 ![Converting client.py to exe file](/pictures/screenshot0.png)
+
+#### Running Client in Background 
+
+In order to run client.py in background save as a .pyw file instead and convert to exe file. **Changing client.py to a .pyw file and converting to exe results in a loss of the 'router_password' command.**
