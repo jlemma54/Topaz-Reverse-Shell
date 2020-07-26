@@ -45,5 +45,9 @@ The Topaz Reverse Shell is a basic remote shell program for Windows written in p
 - shutdown -> remote shutdown of client computer
 - exit -> exits program
 
+---
 
 
+## How to Use
+
+If Python 2.7 is not installed on client computer use pyinstaller version 3.6 to convert client.py to an exe file. 
