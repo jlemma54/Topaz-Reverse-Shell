@@ -98,30 +98,15 @@ while True:
         while True:
             keyPair = RSA.generate(4096)
             print ""
-            print "Generated key pair"
+            print "Swapping keys ..."
             pubKey = keyPair.publickey()
-            print ""
-            print "Gemerated public key"
             pubKeyPEM = pubKey.exportKey()
-            print ""
-            print(str(pubKeyPEM))
-
-            print ""
-            print ""
             privKeyPEM = keyPair.exportKey()
-            print(privKeyPEM.decode('ascii'))
-
             send_one_message(conn, pubKeyPEM.encode())
-
             otherKey = recv_one_message(conn)
-            print ""
-            print "Recieved other key"
             otherKey = otherKey.decode()
             known_hosts.append(otherKey)
-            print ""
-            print "Apennded to known host"
-            print ""
-            print known_hosts[0]
+            print "Finished key exchange\n"
             break
 
         print("")

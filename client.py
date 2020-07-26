@@ -76,30 +76,15 @@ while True:
     while True:
         otherKey = recv_one_message(s)
         print ""
-        print "Recieved other key"
+        print "Swapping keys ...\n"
         otherKey = otherKey.decode()
         known_hosts.append(otherKey)
-        print ""
-        print "Apennded to known host"
         keyPair = RSA.generate(4096)
-        print ""
-        print "Generated key pair"
-
         pubKey = keyPair.publickey()
-        print ""
-        print "Gemerated public key"
         pubKeyPEM = pubKey.exportKey()
-        print ""
-        print(str(pubKeyPEM))
-
-        print ""
-        print ""
         privKeyPEM = keyPair.exportKey()
-        print(privKeyPEM.decode('ascii'))
-
         send_one_message(s, pubKeyPEM.encode())
-        print ""
-        print known_hosts[0]
+        print "Finished key exchange\n"
         break
 
     while True:
