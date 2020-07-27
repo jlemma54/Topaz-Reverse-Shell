@@ -55,9 +55,30 @@ If Python 2.7 is not installed on client computer use pyinstaller version 3.6 to
 ![Converting client.py to exe file](/pictures/screenshot0.png)
 
 
+#### Running Server 
+
+To run server type **python server.py**
+
+![Running server.py](/pictures/screenshot4.png)
+
+You will be asked whether or not you would like to port forward server onto ngrok server 
+
+![Prompt to port forward to ngrok](/pictures/screenshot5.png)
+
+If **n** is selected, server will begin listening for connections on local network 
+
+![Listening on local network](/pictures/screenshot1.png)
+
+if **y** is selected, server will be port forwarded to ngrok and pring out address and port number
+
+![Server listening on ngrok server](/pictures/screenshot8.png)
+
+
+
+
 #### Running Client
 
-To run client in background type **python client.py** 
+To run client type **python client.py** 
 
 ![Running client.py](/pictures/screenshot1.png)
 
