@@ -61,6 +61,14 @@ To run client in background type **python client.py**
 
 ![Running client.py](/pictures/screenshot1.png)
 
+If server is being portforwarded to ngrok type in address of ngrok server and port number as such
+
+![Connecting client.py to ngrok server](/pictures/screenshot8.png)
+
+Otherwise type in ip of machine on same network and 22 for the port (default port is 22 if ran locally)
+
+![Connecting to client.py within same network](/pictures/screenshot2.png)
+
 
 
 #### Running Client in Background 
