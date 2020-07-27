@@ -15,7 +15,7 @@ portforward = False
 
 
 while True:
-    portforward_input = raw_input(str('\nWould you like to portforward over to ngrok server [y/n] -> '))
+    portforward_input = raw_input(str('\nWould you like to port forward over to ngrok server [y/n] -> '))
 
     if portforward_input.upper() == 'Y':
         portforward = True
