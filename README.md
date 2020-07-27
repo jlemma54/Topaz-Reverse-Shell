@@ -1,28 +1,12 @@
 # Topaz Reverse-Shell
 
 
-A simple reverse shell for Windows written in python
+A simple reverse shell for Windows written in python 2.7
 
 ## Disclaimer 
 
 THIS IS ONLY TO BE USED FOR EDUCATIONAL PURPOSES. I DO NOT TAKE RESPONSIBILITY IF THIS PROJECT IS USED FOR MALICIOUS ACTIVITY
 
-## Requirements
-
-- python=2.7
-- packages: 
-  - pycryptodomex=3.97
-  - pyngrok=4.12
-  - opencv-python=4.2.0.32
-  - pyaudio=0.2.11
-  - pyautogui=0.9.50
-  - pynput=1.68
-  - pywin32=228
-    - win32clipboard
-    - wmi
-    - win32crypt
-
----
 
 ## Description
 The Topaz Reverse Shell is a basic remote shell program for Windows written in python used to execute its built in commands on a client computer. Topaz does this over a TCP connection and has the ability to be used on different networks by port forwarding the server onto an ngrok server using pyngrok. Pyngrok is a python wrapper for ngrok, making it possible to port forward within python itself. Topaz utilizes both RSA and AES 256 encryption algorithims to securely send commands, messages, and files between both the server and client computers.
