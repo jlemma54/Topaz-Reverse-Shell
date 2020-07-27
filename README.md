@@ -24,7 +24,7 @@ THIS IS ONLY TO BE USED FOR EDUCATIONAL PURPOSES. I DO NOT TAKE RESPONSIBILITY I
 ---
 
 ## Description
-The Topaz Reverse Shell is a basic remote shell program for Windows written in python used to execute its built in commands on a client computer. Topaz does this over a TCP connection and has the ability to be used on different networks by port forwarding the server onto an ngrok server using pyngrok. Pyngrok is a python wrapper for ngrok, making it possible to portforward within python itself. Topaz utilizes both RSA and AES 256 encryption algorithims to securely send commands, messages, and files between both the server and client computers.
+The Topaz Reverse Shell is a basic remote shell program for Windows written in python used to execute its built in commands on a client computer. Topaz does this over a TCP connection and has the ability to be used on different networks by port forwarding the server onto an ngrok server using pyngrok. Pyngrok is a python wrapper for ngrok, making it possible to port forward within python itself. Topaz utilizes both RSA and AES 256 encryption algorithims to securely send commands, messages, and files between both the server and client computers.
 
 ---
 
@@ -61,7 +61,7 @@ To run client in background type **python client.py**
 
 ![Running client.py](/pictures/screenshot1.png)
 
-If server is being portforwarded to ngrok type in address of ngrok server and port number as such
+If server is being port forwarded to ngrok type in address of ngrok server and port number as such
 
 ![Connecting client.py to ngrok server](/pictures/screenshot8.png)
 
