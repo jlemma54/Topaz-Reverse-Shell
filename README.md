@@ -57,6 +57,11 @@ If Python 2.7 is not installed on client computer use pyinstaller version 3.6 to
 
 #### Running Client
 
+To run client in background type **python client.py** 
+
+![Running client.py](/pictures/screenshot1.png)
+
+
 
 #### Running Client in Background 
 
