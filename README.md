@@ -1,5 +1,7 @@
 # Topaz Reverse-Shell
 
+![Topaz logo](/pictures/logo.jpg)
+
 A simple reverse shell for Windows written in python
 
 ## Disclaimer 
