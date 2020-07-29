@@ -22,6 +22,16 @@ class AES256:
         cipher = AES.new(key=self.key, mode=AES.MODE_CFB, iv=iv)
         return base64.b64encode(iv + cipher.encrypt(raw))
 
+    @staticmethod
+    def encrypt(raw, key):
+        BS = AES.block_size
+        pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
+
+        raw = base64.b64encode(pad(raw).encode('utf8'))
+        iv = get_random_bytes(AES.block_size)
+        cipher = AES.new(key=key, mode=AES.MODE_CFB, iv=iv)
+        return base64.b64encode(iv + cipher.encrypt(raw))
+
     def encrypt_file(self, in_filename, out_filename=None, chunksize=64 * 1024):
 
         if not out_filename:
