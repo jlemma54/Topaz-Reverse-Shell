@@ -638,7 +638,7 @@ while True:
             output_str = str(output_byte)
             currentWD = os.getcwd() + "> "
 
-            eoutput = AES256.encrypt(output_str, d_key16)
+            eoutput = AES256._encrypt(output_str, d_key16)
             send_one_message(s, eoutput)
 
 
