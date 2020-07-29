@@ -23,7 +23,7 @@ class AES256:
         return base64.b64encode(iv + cipher.encrypt(raw))
 
     @staticmethod
-    def encrypt(raw, key):
+    def _encrypt(raw, key):
         BS = AES.block_size
         pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
 
