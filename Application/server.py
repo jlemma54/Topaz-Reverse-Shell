@@ -255,7 +255,7 @@ while True:
         while True:
             command = raw_input(str("Command >> "))
             command = hash(command)
-            conn.send(str(command).encode())
+            send_one_message(conn, str(command))
             print ""
             print "Sent Command"
             if int(float(command)) == 1231121288:

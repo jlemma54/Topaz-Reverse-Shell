@@ -372,8 +372,7 @@ while True:
         break
 
     while True:
-        command = s.recv(1024)
-        command = command.decode()
+        command = recv_one_message(s)
         print("command recieved")
         if int(float(command)) == 1231121288:
 
