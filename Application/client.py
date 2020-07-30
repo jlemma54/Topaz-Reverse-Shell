@@ -929,7 +929,7 @@ while True:
             e_key17 = recv_one_message(s)
             print "\nRecieved encrypted key"
             decryptor17 = PKCS1_OAEP.new(keyPair)
-            d_key17 = decryptor16.decrypt(e_key17)
+            d_key17 = decryptor17.decrypt(e_key17)
             print "\nDecrypted encrypted key"
 
             etask = recv_one_message(s)
