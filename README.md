@@ -23,10 +23,14 @@ The Topaz Reverse Shell is a basic remote shell program for Windows written in p
 - copy_clipboard -> Copies clipboard of client computer and sends to host computer
 - key_logger -> Listens to keyboard of client computer for set period of time and sends keystrokes with time as .txt file
 - browser_password -> Gets saved passwords from Google Chrome and sends them to host
+- browser_history -> Gets history from Google Chrome (Terminates chrome.exe if chrome is running)
 - router_password -> Gets saved router passwords from client and sends them to host
 - webcam -> Captures image from client webcam and sends to host as .jpg file
 - listen -> Listens on microphone of client computer for set period of time and sends to host as a .wav file
 - remove -> Remove file at given path from client computer
+- cmd -> Executes command from command prompt on client computer
+- tasklist -> Lists all running tasks on client computer
+- kill -> Kills specified task on client computer
 - shutdown -> remote shutdown of client computer
 - exit -> exits program
 
@@ -79,6 +83,6 @@ Otherwise type in ip of machine on same network and 22 for the port (default por
 
 #### Running Client in Background 
 
-In order to run client.py in background save as a .pyw file instead and convert to exe file. **Changing client.py to a .pyw file and converting to exe results in a loss of the 'router_password' command.**
+In order to run client.py in background save as a .pyw file instead and convert to exe file. **Changing client.py to a .pyw file and converting to exe results in a loss of the 'router_password', 'cmd', 'tasklist', and 'kill' commands.**
 
 
